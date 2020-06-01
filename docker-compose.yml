@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  iota-node-1:
+    build:
+      context: iri/
+    volumes:
+      - ./etc/localtime:/etc/localtime:ro
+    ports:
+      - 14265:14265
+      - 15600:15600
+    networks:
+      - iota
+networks:
+  iota:
+    driver: bridge
