@@ -6,11 +6,15 @@ services:
       context: iri/
     volumes:
       - ./etc/localtime:/etc/localtime:ro
+      - ./iri/config/config.ini:/root/config/config.ini:ro
     ports:
       - 14265:14265
       - 15600:15600
     networks:
       - iota
+
+#volumes:
+
 networks:
   iota:
     driver: bridge
